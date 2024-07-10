@@ -15,6 +15,7 @@ public class TestScenario {
 
     private String name;
 
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Action> actions;
 }
