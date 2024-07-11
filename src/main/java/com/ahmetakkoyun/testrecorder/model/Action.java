@@ -15,4 +15,8 @@ public class Action {
     private String type;
     private String selector;
     private String value;
+
+    @ManyToOne
+    @JoinColumn(name = "record_id", referencedColumnName = "recordId")
+    private TestScenario testScenario;
 }

@@ -10,12 +10,11 @@ import java.util.List;
 @Table(name = "test_scenarios")
 public class TestScenario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(nullable = false, unique = true)
+    private String recordId;
 
     private String name;
 
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "testScenario")
     private List<Action> actions;
 }
